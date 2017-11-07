@@ -3,7 +3,7 @@
 ## Calibration tools available:
 - [VIMS](./VIMS):
   ```bash
-sh ${$ISISROOT}/script/isis-sh/VIMS/vims.sh 1743896394
+sh ${ISISROOT}/../scripts/isis-sh/VIMS/vims.sh 1743896394
 ```
 
 - ISS (in progress)
