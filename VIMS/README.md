@@ -4,6 +4,7 @@ VIMS calibration with [ISIS 3](https://isis.astrogeology.usgs.gov)
 Get VIMS data
 -------------
 - Search the PDS location on OPUS, for example the image id: [`1743896394_1`](https://tools.pds-rings.seti.org/opus#/primaryfilespec=1743896394&view=detail&detail=S_CUBE_CO_VIMS_1743896394_IR)
+
 ```bash
 curl -s 'http://tools.pds-rings.seti.org/opus/api/data.json?channel=IR&primaryfilespec=1743896394&cols=ringobsid,planet,target,phase1,time1,primaryfilespec' |  sed -e 's/"/\n/g' | grep '.QUB' | tr '[:upper:]' '[:lower:]' | sed -e 's/t/T/g' -e 's/daTa/data/g'
 ```
@@ -11,6 +12,7 @@ curl -s 'http://tools.pds-rings.seti.org/opus/api/data.json?channel=IR&primaryfi
 ![Image from OPUS](https://pds-rings.seti.org/holdings/previews/COVIMS_0xxx/COVIMS_0058/data/2013095T224243_2013096T133534/v1743896394_1_med.png)
 
 - Download the file from the PDS
+
 ```bash
 wget https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/covims_0058/data/2013095T224243_2013096T133534/v1743896394_1.qub
 ```
@@ -48,7 +50,10 @@ _(Note: The `+1` sign represents the first image slice)_
 
 Complete calibration pipeline script
 -------------------------------------
-The whole calibration can be run by `sh ${$ISISROOT}/script/isis-sh/VIMS/vims.sh 1743896394`
+The whole calibration can be run by:
+```bash
+sh ${$ISISROOT}/script/isis-sh/VIMS/vims.sh 1743896394
+```
 
 Sources:
 --------
