@@ -14,10 +14,8 @@ if [ -z $ISIS3DATA ]; then
   QUB=$(pwd)"/QUB"
   CUB=$(pwd)"/CUB"
 else
-  # QUB="${ISIS3DATA}/pds/vims/QUB"
-  # CUB="${ISIS3DATA}/pds/vims/CUB"
-  QUB=$(pwd)"/QUB" # TMP
-  CUB=$(pwd)"/CUB" # TMP
+  QUB="${ISIS3DATA}/pds/VIMS/QUB"
+  CUB="${ISIS3DATA}/pds/VIMS/CUB"
 fi
 mkdir -p $QUB
 mkdir -p $CUB
