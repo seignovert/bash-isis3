@@ -20,9 +20,12 @@ rsync -azv --delete --partial --exclude='kernels' isisdist.astrogeology.usgs.gov
 
 # PDS data folder
 mkdir -p /opt/ISIS/data/pds
+mkdir -p /opt/ISIS/data/pds/VIMS
+mkdir -p /opt/ISIS/data/pds/VIMS/QUB
+mkdir -p /opt/ISIS/data/pds/VIMS/CUB
 
 # Add scripts folder
-mkdir -p /opt/ISIS/script
+mkdir -p /opt/ISIS/scripts
 ```
 
 Update `~/.bashrc`, add:
