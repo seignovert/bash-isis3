@@ -23,6 +23,9 @@ mkdir -p /opt/ISIS/data/pds
 mkdir -p /opt/ISIS/data/pds/VIMS
 mkdir -p /opt/ISIS/data/pds/VIMS/QUB
 mkdir -p /opt/ISIS/data/pds/VIMS/CUB
+mkdir -p /opt/ISIS/data/pds/ISS
+mkdir -p /opt/ISIS/data/pds/ISS/IMG
+mkdir -p /opt/ISIS/data/pds/ISS/CAL
 
 # Add scripts folder
 mkdir -p /opt/ISIS/scripts
