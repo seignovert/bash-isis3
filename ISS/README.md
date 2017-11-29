@@ -70,12 +70,12 @@ Complete calibration pipeline script
 -------------------------------------
 - Download the image, the kernel infos and the OPUS calibrated image:
 ```bash
-sh ${ISISROOT}/../scripts/isis-sh/ISS/iss.sh 1743896394
+sh ${ISISROOT}/../scripts/isis-sh/ISS/iss.sh N1551888681_1
 ```
 
 - The whole calibration can be run by:
 ```bash
-sh ${ISISROOT}/../scripts/isis-sh/ISS/iss.sh 1743896394 isis_cal nav noise
+sh ${ISISROOT}/../scripts/isis-sh/ISS/iss.sh N1551888681_1 isis_cal nav noise
 ```
 
 Sources:
