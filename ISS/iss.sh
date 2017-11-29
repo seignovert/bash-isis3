@@ -41,8 +41,8 @@ if [ ! -f ${IMG}/?${imgID}_?.IMG ]; then
 
   # Downlaod RAW file from the PDS
   echo ">> Download from the PDS: $pds"
-  wget --quiet -P ${IMG} https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/$pds
-  wget --quiet -P ${IMG} https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/$lbl
+  wget -P ${IMG} https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/$pds
+  wget -P ${IMG} https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/$lbl
 
   # Check download
   if [ ! -f ${IMG}/${imgID}.IMG ]; then
@@ -115,6 +115,6 @@ else
       |  sed -e 's/.IMG/_CALIB.IMG/g' \
       | tail -1 \
       )
-    wget --quiet -P ${CAL} https://pds-rings.seti.org/holdings/calibrated/COISS_2xxx/$opus
+    wget -P ${CAL} https://pds-rings.seti.org/holdings/calibrated/COISS_2xxx/$opus
   fi
 fi

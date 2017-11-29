@@ -37,7 +37,7 @@ if [ ! -f ${QUB}/v${imgID}_1.qub ]; then
 
   # Downlaod RAW file from the PDS
   echo ">> Download from the PDS: $pds"
-  wget --quiet -P ${QUB} https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/$pds
+  wget -P ${QUB} https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/$pds
 
   # Check download
   if [ ! -f ${QUB}/v${imgID}_1.qub ]; then
