@@ -52,7 +52,7 @@ Complete calibration pipeline script
 -------------------------------------
 The whole calibration can be run by:
 ```bash
-sh VIMS/vims.sh 1743896394
+./vims.sh 1743896394
 ```
 
 Sources:

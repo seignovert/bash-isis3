@@ -3,10 +3,10 @@
 ## Calibration tools available:
 - [VIMS](./VIMS):
   ```bash
-sh VIMS/vims.sh 1743896394
+./vims.sh 1743896394
 ```
 
 - [ISS](./ISS):
   ```bash
-sh ISS/iss.sh N1551888681_1
+./iss.sh N1551888681_1 [campt] [nav] [cal] [clean] [opus]
 ```

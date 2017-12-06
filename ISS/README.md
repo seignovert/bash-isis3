@@ -70,7 +70,7 @@ Complete calibration pipeline script
 -------------------------------------
 - Download the image, the kernel infos:
 ```bash
-sh ISS/iss.sh N1551888681_1
+./iss.sh N1551888681_1
 ```
 
 Other options:
