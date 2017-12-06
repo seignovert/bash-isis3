@@ -31,14 +31,9 @@ ciss2isis from=N1551888681_1.LBL to=N1551888681_1.cub
 spiceinit web=yes from=N1551888681_1.cub
 ```
 
-- Spice kernels information
+> - [Optional 1] Spice kernels information
 ```bash
 campt from=N1551888681_1.cub to=N1551888681_1.csv format=flat
-```
-
-> - [Optional 1] Radiometric calibration
-```bash
-  cisscal from=N1551888681_1.cub to=N1551888681_1_cal.cub
 ```
 
 > - [Optional 2] Image navigation
@@ -46,17 +41,22 @@ campt from=N1551888681_1.cub to=N1551888681_1.csv format=flat
 phocube from=N1551888681_1.cub to=N1551888681_1_nav.cub phase=true  emission=true incidence=true latitude=true longitude=true pixelresolution=true
 ```
 
-> - [Optional 3] Remove random pixel noise
+> - [Optional 3] Radiometric calibration
+```bash
+  cisscal from=N1551888681_1.cub to=N1551888681_1_cal.cub
+```
+
+> - [Optional 4] Remove random pixel noise
 ```bash
 noisefilter from=N1551888681_1_cal.cub to=N1551888681_1_stdz.cub  toldef=stddev tolmin=2.5 tolmax=2.5 replace=null samples=5 lines=5
 ```
 
-> - [Optional 3] Fill-in NULL pixels
+> - [Optional 4] Fill-in NULL pixels
 ```bash
 lowpass from=N1551888681_1_stdz.cub to=N1551888681_1_fill.cub samples=3 lines=3 filter=outside null=yes hrs=no his=no lrs=no replacement=center
 ```
 
-> - [Optional 3] Remove frame-edge noise
+> - [Optional 4] Remove frame-edge noise
 ```bash
 trim from=N1551888681_1_fill.cub to=N1551888681_1_trim.cub top=2 bottom=2 left=2 right=2
 ```
@@ -68,15 +68,21 @@ wget https://pds-rings.seti.org/holdings/calibrated/COISS_2xxx/COISS_2030/data/1
 
 Complete calibration pipeline script
 -------------------------------------
-- Download the image, the kernel infos and the OPUS calibrated image:
+- Download the image, the kernel infos:
 ```bash
 sh ISS/iss.sh N1551888681_1
 ```
 
-- The whole calibration can be run by:
-```bash
-sh ISS/iss.sh N1551888681_1 isis_cal nav noise
-```
+Other options:
+- `campt`: Spice kernels information
+- `nav`: Image navigation
+- `cal`: ISIS radiometric calibration
+- `clean`:
+  - ISIS radiometric calibration
+  - Remove random pixel noise
+  - Fill-in NULL pixels
+  - Remove frame-edge noise
+- `opus`: Download directly the calibration image from OPUS
 
 Sources:
 --------
