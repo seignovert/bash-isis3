@@ -24,7 +24,7 @@ if [ ! -f ${QUB}/v${imgID}_1.qub ]; then
   # Get PDS location form OPUS API
   echo "> Search image location on the PDS with OPUS"
   pds=$(curl -s \
-    "http://tools.pds-rings.seti.org/opus/api/data.json?channel=IR&primaryfilespec=${imgID}&cols=ringobsid,planet,target,phase1,time1,primaryfilespec" \
+    "https://tools.pds-rings.seti.org/opus/api/data.json?channel=IR&primaryfilespec=${imgID}&cols=ringobsid,planet,target,phase1,time1,primaryfilespec" \
     |  sed -e 's/"/\n/g' \
     | grep '.QUB' \
     | tr '[:upper:]' '[:lower:]' \

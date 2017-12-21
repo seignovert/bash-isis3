@@ -6,7 +6,7 @@ Get ISS data
 - Search the PDS location on OPUS, for example the image id: [`N1551888681_1`](https://tools.pds-rings.seti.org/opus#/primaryfilespec=N1551888681_1&view=detail&detail=S_IMG_CO_ISS_1551888681_N)
 
 ```bash
-curl -s 'http://tools.pds-rings.seti.org/opus/api/data.json?primaryfilespec=1551888681&cols=ringobsid,planet,target,phase1,time1,primaryfilespec' |  sed -e 's/"/\n/g' | grep '.IMG' |  sed -e 's/COISS/coiss/g' | tail -1
+curl -s 'https://tools.pds-rings.seti.org/opus/api/data.json?primaryfilespec=1551888681&cols=ringobsid,planet,target,phase1,time1,primaryfilespec' |  sed -e 's/"/\n/g' | grep '.IMG' |  sed -e 's/COISS/coiss/g' | tail -1
 ```
 
 ![Image from OPUS](https://pds-rings.seti.org/holdings/previews/COISS_2xxx/COISS_2030/data/1551868920_1552128641/N1551888681_1_med.jpg)
@@ -87,5 +87,5 @@ Other options:
 Sources:
 --------
 - [PDS](https://pds-imaging.jpl.nasa.gov/data/cassini/cassini_orbiter/)
-- [OPUS](http://tools.pds-rings.seti.org/opus)
+- [OPUS](https://tools.pds-rings.seti.org/opus)
 - [ISIS tutorials](https://isis.astrogeology.usgs.gov/fixit/projects/isis/wiki/Working_with_Cassini_ISS_Data)

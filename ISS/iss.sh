@@ -21,7 +21,7 @@ function pds {
 	# Get PDS location form OPUS API
 	echo "> Search image location on the PDS with OPUS"
 	pds=$(curl -s \
-			"http://tools.pds-rings.seti.org/opus/api/data.json?primaryfilespec=${imgID}&cols=ringobsid,planet,target,phase1,time1,primaryfilespec" \
+			"https://tools.pds-rings.seti.org/opus/api/data.json?primaryfilespec=${imgID}&cols=ringobsid,planet,target,phase1,time1,primaryfilespec" \
 			|  sed -e 's/"/\n/g' \
 			| grep '.IMG' \
 			|  sed -e 's/COISS/coiss/g' \
@@ -104,7 +104,7 @@ function opus {
 	if [ ! -f ${CAL}/${imgID}_CALIB.IMG ]; then
 		echo "> Download calibration image from OPUS"
 		opus=$(curl -s \
-			"http://tools.pds-rings.seti.org/opus/api/data.json?primaryfilespec=${imgID}&cols=ringobsid,planet,target,phase1,time1,primaryfilespec" \
+			"https://tools.pds-rings.seti.org/opus/api/data.json?primaryfilespec=${imgID}&cols=ringobsid,planet,target,phase1,time1,primaryfilespec" \
 			|  sed -e 's/"/\n/g' \
 			| grep '.IMG' \
 			|  sed -e 's/.IMG/_CALIB.IMG/g' \
