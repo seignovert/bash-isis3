@@ -1,5 +1,8 @@
 # [ISIS 3](https://isis.astrogeology.usgs.gov/) tools
 
+## Install
+The complete install sequence (for Linux and macOS) can be found [here](./INSTALL.md).
+
 ## Calibration tools available:
 - [VIMS](./VIMS):
 ```bash
