@@ -23,16 +23,28 @@ mkdir -p /opt/ISIS/scripts
 
 Install sources for  [macosX](https://isis.astrogeology.usgs.gov/documents/InstallGuide/index.html):
 ```bash
-# Rsync ISIS sources
+# Rsync ISIS sources for macOS
 rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::x86-64_darwin_OSX/isis/ /opt/ISIS/isis/
 ```
 
 Install sources for  [Ubuntu](https://isis.astrogeology.usgs.gov/documents/InstallGuide/index.html):
 ```bash
-# Rsync ISIS sources
+# Rsync ISIS sources for Ubuntu
 rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::x86-64_linux_UBUNTU/isis/ /opt/ISIS/isis/
 ```
-> __Note for Ubuntu 16.04 LTS:__ the `ICU` lib is only availably in version `55` and not `52`. To solve the issue you need to add `deb http://security.ubuntu.com/ubuntu trusty-security main` into your `sources.list` (`Parameters > Sources > Add`). Then `sudo apt-get update; sudo apt-get install libicu52`.
+> __Note for Ubuntu 16.04 LTS:__
+>
+> The `ICU` lib is only availably in version `55` and not `52`.
+> To solve the issue you need to add
+> `deb http://security.ubuntu.com/ubuntu trusty-security main`
+> into your `sources.list` (`Parameters > Sources > Add`).
+> Then `sudo apt-get update; sudo apt-get install libicu52`.
+
+Install sources for  [Red Hat/CentOS](https://isis.astrogeology.usgs.gov/documents/InstallGuide/index.html):
+```bash
+# Rsync ISIS sources for 
+rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::x86-64_linux_RHEL/isis/ /opt/ISIS/isis/
+```
 
 Rsync ISIS data:
 ```bash
